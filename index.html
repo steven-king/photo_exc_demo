@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>King Travels</title>
+   
+	<link rel="stylesheet"  href="css/jquery.mobile.min.css">
+    <link rel="stylesheet"  href="css/styles.css">
+	<link rel="stylesheet" href="css/leaflet.css" />
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.mobile.min.js"></script>
+	<script src="js/app.js"></script>
+  
+    <script src="js/camera.js"></script>
+	<script src="phonegap.js"></script>
+	<script src="barcodescanner.js"></script>
+
+</head>
+	
+<body>
+<div id="homeScreen" data-role="page">
+	<img src="imgs/banner.png" class="banner" />
+	<div data-role="content">
+		<ul data-role="listview" data-inset="true" class="ui-nodisc-icon ui-alt-icon">
+			<li><a href="#scheduledExcursions">Scheduled Excursions</a></li>
+			<li><a href="#pastExcursions">Past Excursions</a></li>
+			<li><a href="#calendar">Calendar of Trips</a></li>
+			<li><a href="#discoverScreen">[ Discover ]</a></li>
+
+		</ul>
+		<div class="ui-grid-a center">
+    		<div class="ui-block-a">
+				<a href="#aboutScreen" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-inline ui-nodisc-icon ui-alt-icon">Info</a>
+			</div>
+    		<div class="ui-block-b">
+				<a href="#mapScreen" class="ui-btn ui-corner-all ui-icon-location ui-btn-icon-notext ui-btn-inline ui-nodisc-icon ui-alt-icon">Map</a>
+			</div>
+		</div>
+		
+		
+		<h4>Camera Test</h4>
+<div id="camera">
+    <button class="camera-control" onclick="capturePhoto();">Capture Photo</button>
+ 
+    <div style="text-align:center;margin:20px;">
+        
+        <img id="cameraPic" src="" style="width:auto;height:120px;"></img>
+    </div>
+</div>
+	
+	
+	</div>
+</div>
+<div id="scheduledExcursions" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>King Photo</h1>
+		<a href="#homeScreen" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-btn-left ui-nodisc-icon ui-alt-icon">Back</a>
+	</header>
+	<div data-role="content">
+		<h1>Scheduled Excursions</h1>
+		<ul data-role="listview" data-inset="false" class="ui-nodisc-icon ui-alt-icon">
+			<li><a href="#"><img src="imgs/places/thailand.jpg">
+				<h2>Thailand: July 2015</h2>
+				<p>Register now</p></a>
+			</li>
+			<li><a href="#"><img src="imgs/places/mongolia.jpg">
+				<h2>Mongolia</h2>
+				<p>Feburary 2016</p></a>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+
+<div id="pastExcursions" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>King Photo</h1>
+		<a href="#homeScreen" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-btn-left ui-nodisc-icon ui-alt-icon">Back</a>
+	</header>
+	<div data-role="content">
+		<h1>Past Excursions</h1>
+		<ul data-role="listview" data-inset="false" class="ui-nodisc-icon ui-alt-icon">
+			<li><a href="#"><img src="imgs/places/north_korea.jpg">
+				<h2>North Korea</h2>
+				<p>Learn More</p></a>
+			</li>
+			<li><a href="#"><img src="imgs/places/north_korea.jpg">
+				<h2>Another Place</h2>
+				<p> </p></a>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+	
+<div id="mapScreen" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>King Photo</h1>
+		<a href="#homeScreen" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-btn-left ui-nodisc-icon ui-alt-icon">Back</a>
+	</header>
+	<div data-role="content">
+		<h1>Your current location!</h1>
+  <div id="map-canvas"/>
+	</div>
+</div>
+
+<div id="discoverScreen" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>King Photo</h1>
+		<a href="#homeScreen" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-btn-left ui-nodisc-icon ui-alt-icon">Back</a>
+	</header>
+	<div data-role="content">
+		<img id="qrcode" src="imgs/qr.png" />
+		<h3 class="center">Discover More Exciting Stories</h3>
+		<p class="center">Any time you see this QR code, scan it using the Discover button to see additional content from SAMOCA.</p>
+		<a id="qrScanBtn" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search">Discover</a>
+	</div>
+</div>
+
+<div id="aboutScreen" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>King Photo Excursions</h1>
+		<a href="#homeScreen" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-btn-left ui-nodisc-icon ui-alt-icon">Back</a>
+	</header>
+	<div data-role="content">
+		<h2>Steven T King</h2>
+		<h3>International Photojournalist</h3>
+		<img class="center banner" src="imgs/steven_king_washingtonpost_unc.jpg" />
+		<p>Steven King is an assistant professor of multimedia and interactive journalism at The University of North Carolina Chapel Hill. He is an award-winning journalist and former Editor of Innovations and Director of Video for The Washington Post with a masters in computer science. He is a storyteller of many mediums from fiction novels to data visualizations. Steven is a Christian, husband and father of two boys living in Durham, N.C.
+	</div>
+	
+	
+
+	
+</div>
+
+  
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbIJVzcMQ4tkDKJTKWwcNn9qaP2CUxVOI">
+    </script>
+    
+    
+    <script src="js/map.js"></script>
+
+</body>
+</html>
