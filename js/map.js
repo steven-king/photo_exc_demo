@@ -1,17 +1,13 @@
   
 
-function onDeviceReady() {
-        navigator.geolocation.getCurrentPosition(generateMap, onError);
-        console.log(position); 
-    }
-
-
 function onError(error) {
+        console.log("onError()");
         alert('code: '    + error.code    + '\n' +
                 'message: ' + error.message + '\n');
     }
     
 function generateMap(position) {
+        console.log("generateMap()");
         console.log(position.coords.latitude);
         console.log(position.coords.longitude);
         var currentLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
