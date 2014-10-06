@@ -19,23 +19,6 @@ function uploadPhoto(data){
 	    'OK'                          // buttonName
 	);
 
-	// upload has failed Fail
-
-	/* 
-
-	if (failedToUpload){
-
-	navigator.notification.alert(
-		'Your Photo has failed to upload',
-		failedDismissed,
-	    'Photo Not Uploaded',
-	    'OK'
-		);
-
-	} 
-	*/
-
-
 }
 
 function okay(){

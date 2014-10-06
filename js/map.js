@@ -1,5 +1,3 @@
-  
-
 function onError(error) {
         console.log("onError()");
         alert('code: '    + error.code    + '\n' +
@@ -24,17 +22,18 @@ function generateMap(position) {
                 position: currentLatLng,
                 map: map,
                 title: 'Current Location'
-  });
+                
+        
+        });
+         //google.maps.event.trigger(map, "resize");
       }
 
 
-/* For Browser testing. Comment out for app testing.
- *
- *var position ={
+/* For Browser testing. Comment out for app testing.*/
+ var position ={
         coords:{latitude:-34.397, longitude:150.644}
 }
 console.log(position.coords.latitude);
 
 
 google.maps.event.addDomListener(window, 'load',generateMap(position));
-*/

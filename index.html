@@ -10,11 +10,16 @@
 	<link rel="stylesheet" href="css/leaflet.css" />
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.mobile.min.js"></script>
+	<script src="https://cdn.firebase.com/js/client/1.0.15/firebase.js"></script>
+	
+	
 	<script src="js/app.js"></script>
   
     <script src="js/camera.js"></script>
 	<script src="phonegap.js"></script>
 	<script src="barcodescanner.js"></script>
+	
+	
 
 </head>
 	
@@ -59,7 +64,7 @@
 	</header>
 	<div data-role="content">
 		<h1>Scheduled Excursions</h1>
-		<ul data-role="listview" data-inset="false" class="ui-nodisc-icon ui-alt-icon">
+		<ul id="trip-list" data-role="listview" data-inset="false" class="ui-nodisc-icon ui-alt-icon">
 			<li><a href="#"><img src="imgs/places/thailand.jpg">
 				<h2>Thailand: July 2015</h2>
 				<p>Register now</p></a>
