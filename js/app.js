@@ -5,7 +5,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 	console.log("onDeviceReady()");
 	navigator.geolocation.getCurrentPosition(generateMap, onError);
-        console.log(position); 
+        console.log(position);
+	loadTrips();
 	
 	$( "#qrScanBtn" ).click(function() {
   		doScan();
